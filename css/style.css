@@ -1,3 +1,5 @@
+/***/
+
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@700&display=swap');
 
 *{
@@ -7,14 +9,12 @@
     scroll-behavior: smooth;
 }
 
-html,body{
-    height: 100%;
-}
-
 :root{
 	--font-primary: "Montserrat", sans-serif;
 	--font-secundary: "Lato", sans-serif;
 }
+
+/*estilos gerais*/
 
 .container{
     margin: 0 auto;
@@ -39,12 +39,39 @@ html,body{
     border-bottom: 4px solid white;
 }
 
+/*obrigada*/
+
+section.obrigada{
+    height: 50vh;
+    position: relative;
+}
+
+.obrigada-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.obrigada-text h2{
+    font-family: var(--font-primary);
+    color: #c78888;
+}
+
+.obrigada-text a{
+    font-family: var(--font-primary);
+    color: #e27c7c;
+    font-size: 17px;
+}
+
 /*header*/
 
 header{
     padding: 10px;
     background-color: #dfa7a7;
 }
+
+/*logo*/
 
 .logo{
     float: left;
@@ -59,7 +86,10 @@ header{
     font-family: var(--font-primary);
 }
 
+/*desktop*/
+
 .desktop{
+    display: block;
     float: right;
 }
 
@@ -70,7 +100,7 @@ header{
 .desktop ul li{
     display: inline-block;
     margin-left: 20px;
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
 .desktop ul li a{
@@ -79,8 +109,50 @@ header{
     text-decoration: none;
 }
 
-/*bg*/
+/*mobile*/
 
+.mobile{
+	float: right;
+	display: none;
+}
+
+.mobile ul{
+	display: none;
+	z-index: 1;
+	position: fixed;
+	left: 0;
+	top: 3rem;
+	border-top:2px solid #c78888;
+	background: white;
+	width: 100%;
+	list-style-type: none;
+}
+
+.mobile ul li{
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+	border-bottom: 1px solid #c78888;
+	padding: 6.4px;
+}
+
+.mobile a{
+	font-family: var(--font-primary);
+	color: #c78888;
+	padding: 8px 20px;
+	text-decoration: none;
+}
+
+.mobile > i{
+    z-index: 99;
+    right: 20px;
+    position: fixed;
+	cursor: pointer;
+	font-size: 2rem;
+	color: white;
+}
+
+/*bg*/
 
 section.bg{
     height: 100%;
@@ -152,9 +224,11 @@ section.bg{
     text-decoration: none;
 }
 
+/*sobre*/
+
 section.sobre{
     position: relative;
-    height: 60%;
+    height: 60vh;
     background-color: #dfa7a7;
 }
 
@@ -201,7 +275,7 @@ section.sobre{
 /*produtos*/
 
 section.produtos{
-    height: 110%;
+    height: 100%;
     background-color: #d69a9a;
 }
 
@@ -263,6 +337,7 @@ section.produtos{
     width: 100%;
     text-align: center;
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .produtos-bottom-text{
@@ -341,6 +416,7 @@ section.contato{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .sociais h2{
@@ -432,4 +508,179 @@ section.footerdois{
 
 .footerdois-text p{
     font-family: var(--font-secundary);
+}
+
+@media screen and (max-width: 1024px){
+    .sobre-wrapper{
+        width: 90%;
+    }
+    .sobre-single{
+        width: 40%;
+    }
+    footer img{
+        left: -280px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+    .sobre-wrapper{
+        width: 100%;
+    }
+    .sobre-single{
+        margin: 0px 10px;
+        width: 45%;
+    }
+    .produtos-single{
+        width: 33%;
+        text-align: center;
+        padding: 0px 20px;
+    }
+    footer img{
+        left: -220px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .bg-text{
+        left: 5%;
+    }
+    .bg-text h1{
+        font-size: 25px;
+    }
+    .bg-text p{
+        font-size: 18px;
+    }
+    .bg-text button{
+        margin-top: 2px;
+        height: 28px;
+        width: 130px;
+    }
+    section.sobre{
+        height: 100vh;
+    }
+    .sobre-wrapper{
+        padding-top: 50px;
+    }
+    .sobre-single{
+        width: 60%;
+        margin: 20px 0px;
+        height: 230px;
+        padding: 15px;
+    }
+    .sobre-text h3{
+        font-size: 17px;
+    }
+    .sobre-text p{
+        font-size: 14px;
+    }
+    .sobre-text i{
+        font-size: 20px;
+    }
+    .produtos-single{
+        width: 50%;
+    }
+    .sociais h2{
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    footer img{
+        left: -160px;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .bg-text{
+        left: 3%;
+    }
+    .bg-text h1{
+        font-size: 18px;
+        margin-bottom: 2px;
+    }
+    .bg-text p{
+        font-size: 15px;
+    }
+    .bg-text button{
+        margin-top: 4px;
+        height: 24px;
+        width: 120px;
+    }
+    .bg-text button a{
+        font-size: 12.5px;
+    }
+    .sobre-single{
+        width: 100%;
+        margin: 20px 30px;
+    }
+    .produtos-single{
+        width: 100%;
+    }
+    .contato-wrapper form input{
+        width: 100%;
+    }
+    .contato-wrapper form textarea{
+        width: 100%;
+    }
+    .sociais h2{
+        font-size: 23px;
+    }
+    .sociais a i{
+        padding: 0px 20px;
+        font-size: 35px;
+    }
+    .footer-single{
+        text-align: center;
+    }
+    .left{
+        float: none;
+    }
+    .right{
+        float: none;
+    }
+    footer img{
+        top: -15px;
+        left: -118px;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .bg-text h1{
+        font-size: 16px;
+    }
+    .bg-text p{
+        font-size: 14px;
+    }
+    .bg-text button{
+        margin-top: 2px;
+        height: 22px;
+        width: 110px;
+    }
+    .bg-text button a{
+        font-size: 12px;
+    }
+    .sobre-single{
+        width: 100%;
+        margin: 20px 30px;
+        height: 210px;
+        padding: 8px;
+    }
+    .sobre-text h3{
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+    .sobre-text p{
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    .sobre-text i{
+        font-size: 18px;
+    }
+    footer img{
+        left: -95px;
+    }
 }
