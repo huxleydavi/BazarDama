@@ -130,16 +130,16 @@ header{
 
 .mobile ul li{
 	text-align: center;
+    display: inline-block;
 	width: 100%;
-	display: inline-block;
 	border-bottom: 1px solid #c78888;
-	padding: 6.4px;
+    padding: 6.4px;
 }
 
 .mobile a{
 	font-family: var(--font-primary);
 	color: #c78888;
-	padding: 8px 20px;
+	padding: 20px 40%;
 	text-decoration: none;
 }
 
@@ -596,7 +596,7 @@ section.footerdois{
 
 @media screen and (max-width: 420px){
     section.bg{
-        height: 86%;
+        height: 70%;
     }
     .overlay{
         height: 100%;
